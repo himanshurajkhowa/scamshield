@@ -1,0 +1,4 @@
+boxer.json: user-supplied boxer lottie.json, 21 November 2026.
+lock.json: extracted from user-supplied lock.lottie, animations/12345.json.
+Animation authors/license were not provided; no authorship claim is made.
+lottie-light.min.js: airbnb/lottie-web, lightweight SVG build, Git blob 0e5a5691c76b06afc08d0cd480683915d864d5ec. Player license in PLAYER-LICENSE.txt.

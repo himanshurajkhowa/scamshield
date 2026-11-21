@@ -1,0 +1,315 @@
+{
+  "purpose": "Hand-authored diagnostic probes only; not held-out accuracy, rule benchmark or a tuning set.",
+  "model_version": "v2 candidate; active V1 unchanged",
+  "cases": [
+    {
+      "case": "genuine_credit",
+      "expected_kind": "genuine",
+      "rules": [],
+      "v1": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.2475,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.9269,
+        "rule_weight": 0,
+        "high_risk_cause": "ml"
+      }
+    },
+    {
+      "case": "genuine_debit",
+      "expected_kind": "genuine",
+      "rules": [],
+      "v1": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.2143,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "Needs a Closer Look",
+        "spam_score": 0.772,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      }
+    },
+    {
+      "case": "genuine_upi",
+      "expected_kind": "genuine",
+      "rules": [],
+      "v1": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.2043,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.2619,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      }
+    },
+    {
+      "case": "genuine_otp",
+      "expected_kind": "genuine",
+      "rules": [],
+      "v1": {
+        "verdict": "Needs a Closer Look",
+        "spam_score": 0.548,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.0739,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      }
+    },
+    {
+      "case": "genuine_personal",
+      "expected_kind": "genuine",
+      "rules": [],
+      "v1": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.062,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "No Strong Scam Indicators",
+        "spam_score": 0.0029,
+        "rule_weight": 0,
+        "high_risk_cause": "neither"
+      }
+    },
+    {
+      "case": "genuine_delivery",
+      "expected_kind": "genuine",
+      "rules": [
+        {
+          "code": "delivery",
+          "title": "Delivery payment request",
+          "detail": "Check any delivery charge through the courier’s official app or website.",
+          "weight": 1
+        }
+      ],
+      "v1": {
+        "verdict": "Needs a Closer Look",
+        "spam_score": 0.3128,
+        "rule_weight": 1,
+        "high_risk_cause": "neither"
+      },
+      "v2": {
+        "verdict": "Needs a Closer Look",
+        "spam_score": 0.1519,
+        "rule_weight": 1,
+        "high_risk_cause": "neither"
+      }
+    },
+    {
+      "case": "otp_request",
+      "expected_kind": "fraud",
+      "rules": [
+        {
+          "code": "credentials",
+          "title": "Request for a secret",
+          "detail": "The text asks for an OTP, UPI PIN or password. Never share these with another person.",
+          "weight": 3
+        }
+      ],
+      "v1": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.9134,
+        "rule_weight": 3,
+        "high_risk_cause": "both"
+      },
+      "v2": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.8779,
+        "rule_weight": 3,
+        "high_risk_cause": "both"
+      }
+    },
+    {
+      "case": "upi_pin",
+      "expected_kind": "fraud",
+      "rules": [
+        {
+          "code": "credentials",
+          "title": "Request for a secret",
+          "detail": "The text asks for an OTP, UPI PIN or password. Never share these with another person.",
+          "weight": 3
+        },
+        {
+          "code": "pressure",
+          "title": "Pressure to act quickly",
+          "detail": "Urgency can discourage you from checking the sender.",
+          "weight": 1
+        }
+      ],
+      "v1": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.1841,
+        "rule_weight": 4,
+        "high_risk_cause": "rules"
+      },
+      "v2": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.3602,
+        "rule_weight": 4,
+        "high_risk_cause": "rules"
+      }
+    },
+    {
+      "case": "kyc_threat",
+      "expected_kind": "fraud",
+      "rules": [
+        {
+          "code": "credentials",
+          "title": "Request for a secret",
+          "detail": "The text asks for an OTP, UPI PIN or password. Never share these with another person.",
+          "weight": 3
+        },
+        {
+          "code": "kyc",
+          "title": "KYC or account-blocking pressure",
+          "detail": "Identity verification is paired with a threat of losing access.",
+          "weight": 2
+        },
+        {
+          "code": "pressure",
+          "title": "Pressure to act quickly",
+          "detail": "Urgency can discourage you from checking the sender.",
+          "weight": 1
+        }
+      ],
+      "v1": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.5656,
+        "rule_weight": 6,
+        "high_risk_cause": "rules"
+      },
+      "v2": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.9269,
+        "rule_weight": 6,
+        "high_risk_cause": "both"
+      }
+    },
+    {
+      "case": "fake_challan",
+      "expected_kind": "fraud",
+      "rules": [
+        {
+          "code": "url_deceptive",
+          "title": "Official-looking text is not the reference host",
+          "detail": "The actual host is echallan.parivahan.gov.in.payments.example. An official name embedded in another host does not make it official.",
+          "weight": 3
+        },
+        {
+          "code": "impersonation",
+          "title": "Service name in an unverified hostname",
+          "detail": "The actual host is echallan.parivahan.gov.in.payments.example, outside the small reference list. It contains a familiar service name or close spelling; confirm through the official service.",
+          "weight": 3
+        },
+        {
+          "code": "url_government",
+          "title": "Government-looking hostname",
+          "detail": "The actual host echallan.parivahan.gov.in.payments.example uses government-looking labels outside .gov.in or .nic.in.",
+          "weight": 3
+        },
+        {
+          "code": "challan_mismatch",
+          "title": "e-Challan service and link do not match",
+          "detail": "This message mentions RTO/e-Challan but links outside the two checked e-Challan hostnames. Independently use echallan.parivahan.gov.in or your verified state traffic-police portal; this list does not cover every legitimate state service.",
+          "weight": 3
+        }
+      ],
+      "v1": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.2215,
+        "rule_weight": 12,
+        "high_risk_cause": "rules"
+      },
+      "v2": {
+        "verdict": "Potential Scam",
+        "spam_score": 0.6739,
+        "rule_weight": 12,
+        "high_risk_cause": "rules"
+      }
+    }
+  ],
+  "original_false_positive": {
+    "rule_signals": [],
+    "cause": "ml",
+    "top_positive_features": [
+      {
+        "feature": "word__rs",
+        "logit_contribution": 0.7332457672652913
+      },
+      {
+        "feature": "word__your",
+        "logit_contribution": 0.5883137053548438
+      },
+      {
+        "feature": "word__app",
+        "logit_contribution": 0.29835994717138775
+      },
+      {
+        "feature": "word__never",
+        "logit_contribution": 0.2013608625871473
+      },
+      {
+        "feature": "word__account",
+        "logit_contribution": 0.15401869556748587
+      },
+      {
+        "feature": "char__ rs",
+        "logit_contribution": 0.1530568671342416
+      },
+      {
+        "feature": "char__150",
+        "logit_contribution": 0.13131208812481385
+      },
+      {
+        "feature": "word__bank",
+        "logit_contribution": 0.12936965291334518
+      },
+      {
+        "feature": "char__00.",
+        "logit_contribution": 0.12551393435898017
+      },
+      {
+        "feature": "word__credited",
+        "logit_contribution": 0.11790230235192292
+      },
+      {
+        "feature": "char__0. ",
+        "logit_contribution": 0.11523755885255609
+      },
+      {
+        "feature": "word__this transaction",
+        "logit_contribution": 0.11245040334517813
+      }
+    ]
+  },
+  "summary": {
+    "v1": {
+      "genuine_potential_scam": 0,
+      "genuine_total": 6,
+      "fraud_potential_scam": 4,
+      "fraud_total": 4
+    },
+    "v2": {
+      "genuine_potential_scam": 1,
+      "genuine_total": 6,
+      "fraud_potential_scam": 4,
+      "fraud_total": 4
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+.vercel/
+training/data/
+*.log
+.DS_Store
+
+node_modules/
+.cache/
+.coverage
+# Local-only assets/artifacts; clean public snapshot excludes their Git history.
+public/static/animations/boxer.json
+public/static/animations/lock.json
+ml/model_v1.joblib
+ml/model_v2.joblib

@@ -1,0 +1,32 @@
+[
+  {
+    "example": "Fake Bank / KYC Alert",
+    "verdict": "Potential Scam",
+    "spam_score": 0.6275
+  },
+  {
+    "example": "UPI Payment Scam",
+    "verdict": "Potential Scam",
+    "spam_score": 0.4789
+  },
+  {
+    "example": "Suspicious Delivery Link",
+    "verdict": "Needs a Closer Look",
+    "spam_score": 0.347
+  },
+  {
+    "example": "Genuine Transactional Message",
+    "verdict": "No Strong Scam Indicators",
+    "spam_score": 0.2475
+  },
+  {
+    "example": "Ordinary Personal Message",
+    "verdict": "No Strong Scam Indicators",
+    "spam_score": 0.094
+  },
+  {
+    "example": "Ambiguous Message",
+    "verdict": "No Strong Scam Indicators",
+    "spam_score": 0.0387
+  }
+]

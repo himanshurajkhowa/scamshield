@@ -1,0 +1,257 @@
+{
+  "version": "v2-candidate",
+  "active_version": "v1",
+  "status": "REJECTED_SMOKE_REGRESSION",
+  "provenance": [
+    {
+      "source": "uci",
+      "url": "https://archive.ics.uci.edu/dataset/228/sms+spam+collection",
+      "license": "CC BY 4.0",
+      "raw_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+      "raw_records": 5159
+    },
+    {
+      "source": "india_sms",
+      "url": "https://github.com/junioralive/india-spam-sms-classification",
+      "license": "MIT",
+      "git_blob": "2f8552223ceafc22ce634a659a5f947ad44e4d88",
+      "raw_sha256": "e6a28126d1c4ec9d805a10cd89f2de2bb63650532102e9f35ab05c909c3a79f3",
+      "raw_records": 2267
+    },
+    {
+      "source": "enron",
+      "url": "https://github.com/MWiechmann/enron_spam_data",
+      "license": "GPL-3.0 repository; original email rights remain with senders",
+      "raw_sha256": "e994ad3c09fd7528b397e1f921742da5dd59f19695bc25cdb3617eb3ded17634",
+      "raw_records": 33716,
+      "bounded_sample": 6000
+    }
+  ],
+  "excluded_sources": {
+    "iiit_delhi": "Mirror has no explicit data reuse license; original requester requires access request.",
+    "spamassassin": "No explicit redistribution license; sender copyrights retained. Enron chosen instead.",
+    "hindi_mt": "Readily found dataset is poor machine translation of UCI, not original Hindi; ambiguous GPL version and no quality validation within timebox."
+  },
+  "raw_loaded": 13373,
+  "unique_retained": 12569,
+  "exact_conflicts": 0,
+  "template_conflict_records": 0,
+  "train_records": 10027,
+  "test_records": 2542,
+  "train_by_source": {
+    "uci": 4103,
+    "india_sms": 1613,
+    "enron": 4311
+  },
+  "test_by_source": {
+    "uci": 1056,
+    "india_sms": 439,
+    "enron": 1047
+  },
+  "comparison": {
+    "uci_original_holdout": {
+      "v1": {
+        "n": 1032,
+        "accuracy": 0.9844961240310077,
+        "precision": 0.9307692307692308,
+        "recall": 0.9453125,
+        "f1": 0.937984496124031,
+        "confusion_matrix": [
+          [
+            895,
+            9
+          ],
+          [
+            7,
+            121
+          ]
+        ]
+      },
+      "v2": {
+        "n": 1032,
+        "accuracy": 0.9825581395348837,
+        "precision": 0.9435483870967742,
+        "recall": 0.9140625,
+        "f1": 0.9285714285714286,
+        "confusion_matrix": [
+          [
+            897,
+            7
+          ],
+          [
+            11,
+            117
+          ]
+        ]
+      }
+    },
+    "all_common_holdout": {
+      "v1": {
+        "n": 2518,
+        "accuracy": 0.806989674344718,
+        "precision": 0.7588028169014085,
+        "recall": 0.5525641025641026,
+        "f1": 0.6394658753709199,
+        "confusion_matrix": [
+          [
+            1601,
+            137
+          ],
+          [
+            349,
+            431
+          ]
+        ]
+      },
+      "v2": {
+        "n": 2518,
+        "accuracy": 0.9785544082605242,
+        "precision": 0.9763779527559056,
+        "recall": 0.9538461538461539,
+        "f1": 0.9649805447470817,
+        "confusion_matrix": [
+          [
+            1720,
+            18
+          ],
+          [
+            36,
+            744
+          ]
+        ]
+      }
+    },
+    "india_sms_novel": {
+      "v1": {
+        "n": 439,
+        "accuracy": 0.8451025056947609,
+        "precision": 0.9263157894736842,
+        "recall": 0.5906040268456376,
+        "f1": 0.7213114754098361,
+        "confusion_matrix": [
+          [
+            283,
+            7
+          ],
+          [
+            61,
+            88
+          ]
+        ]
+      },
+      "v2": {
+        "n": 439,
+        "accuracy": 0.9863325740318907,
+        "precision": 0.9798657718120806,
+        "recall": 0.9798657718120806,
+        "f1": 0.9798657718120806,
+        "confusion_matrix": [
+          [
+            287,
+            3
+          ],
+          [
+            3,
+            146
+          ]
+        ]
+      }
+    },
+    "enron_novel": {
+      "v1": {
+        "n": 1047,
+        "accuracy": 0.6160458452722063,
+        "precision": 0.6472303206997084,
+        "recall": 0.441351888667992,
+        "f1": 0.524822695035461,
+        "confusion_matrix": [
+          [
+            423,
+            121
+          ],
+          [
+            281,
+            222
+          ]
+        ]
+      },
+      "v2": {
+        "n": 1047,
+        "accuracy": 0.9713467048710601,
+        "precision": 0.983640081799591,
+        "recall": 0.9562624254473161,
+        "f1": 0.969758064516129,
+        "confusion_matrix": [
+          [
+            536,
+            8
+          ],
+          [
+            22,
+            481
+          ]
+        ]
+      }
+    },
+    "v2_all_grouped": {
+      "n": 2542,
+      "accuracy": 0.978756884343037,
+      "precision": 0.9782330345710627,
+      "recall": 0.9538077403245943,
+      "f1": 0.965865992414665,
+      "confusion_matrix": [
+        [
+          1724,
+          17
+        ],
+        [
+          37,
+          764
+        ]
+      ]
+    }
+  },
+  "model_bytes": 816552,
+  "fit_seconds": 7.53,
+  "seed": 42,
+  "leakage_checks": {
+    "exact_overlap": 0,
+    "template_group_overlap": 0,
+    "v1_test_in_training": 0
+  },
+  "limitations": [
+    "No IIIT or Hindi corpus included. Indian source is not a dedicated Hinglish benchmark.",
+    "Promotional spam labels are not fraud labels. Historic Enron is not modern email coverage.",
+    "Template normalization prevents exact/URL/number variants crossing splits; paraphrases and complex thread overlap may remain.",
+    "Per-source primary attribution uses UCI first; new-source comparison excludes overlap with any UCI record."
+  ],
+  "smoke_tests": [
+    {
+      "case": "otp_request",
+      "http_status": 200,
+      "expected": "Potential Scam",
+      "actual": "Potential Scam",
+      "spam_score": 0.8779,
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "http_status": 200,
+      "expected": "No Strong Scam Indicators",
+      "actual": "No Strong Scam Indicators",
+      "spam_score": 0.0054,
+      "passed": true
+    },
+    {
+      "case": "genuine_transaction",
+      "http_status": 200,
+      "expected": "No Strong Scam Indicators",
+      "actual": "Potential Scam",
+      "spam_score": 0.9269,
+      "passed": false
+    }
+  ],
+  "promotion_reason": "V2 classifies the existing genuine transactional example as Potential Scam (score 0.9269); V1 returns No Strong Scam Indicators. Failed smoke gate; no deployment or promotion attempted.",
+  "model_sha256": "4ad219fbe80019be10073bf2b398d1c4cf362d0a8bd81454ddd1d4590d8a3936",
+  "active_v1_unchanged": true
+}

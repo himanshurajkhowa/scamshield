@@ -1,0 +1,11 @@
+.git
+.venv
+__pycache__
+training
+tests
+.env*
+ml/model_v1.joblib
+ml/model_v2.joblib
+ml/metrics_v1.json
+ml/metrics_v2.json
+ml/v2_diagnosis.json

@@ -1,0 +1,31 @@
+{
+  "source": "UCI SMS Spam Collection",
+  "source_url": "https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip",
+  "license": "CC BY 4.0",
+  "indian_training_data": false,
+  "raw_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+  "unique_messages": 5159,
+  "conflicting_duplicates_removed": 0,
+  "train_size": 4127,
+  "test_size": 1032,
+  "seed": 42,
+  "accuracy": 0.9844961240310077,
+  "precision": 0.9307692307692308,
+  "recall": 0.9453125,
+  "f1": 0.937984496124031,
+  "confusion_matrix_labels": [
+    "ham",
+    "spam"
+  ],
+  "confusion_matrix": [
+    [
+      895,
+      9
+    ],
+    [
+      7,
+      121
+    ]
+  ],
+  "model_bytes": 296455
+}
