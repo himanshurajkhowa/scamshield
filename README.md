@@ -25,6 +25,8 @@ Submitted links are never opened, resolved, followed, executed or fetched. Refer
 
 Python 3.12, Flask and scikit-learn serve the API and HTML/CSS/JavaScript interface. XMLHttpRequest (AJAX) sends messages without reloading. Models load lazily once per worker; inference never retrains.
 
+### Inference Pipeline
+
 ```mermaid
 flowchart TD
  B[Browser] --> F[Flask API]
@@ -35,6 +37,8 @@ flowchart TD
  R --> E[Verdict and explanation]
  E --> B
 ```
+
+### Training Pipeline
 
 ```mermaid
 flowchart TD
@@ -84,7 +88,7 @@ node --check public/static/preferences.js
 node --check public/static/lottie-light.min.js
 ```
 
-### Models and evaluation
+## Models and Evaluation
 
 Both models were trained independently using TF-IDF and logistic regression. **V1 is deployed; experimental V2 failed a smoke test and remains undeployed.** V1 was trained only on UCI SMS. India-focused signals in production come from cybersecurity rules, not validated Indian ML performance.
 
